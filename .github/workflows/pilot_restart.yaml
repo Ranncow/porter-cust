@@ -1,11 +1,11 @@
-name: PILOT_DESK restart
+name: PILOT_CUST restart
 
 # start action manually
 on: workflow_dispatch
 
 env:
-  SERVICE: pwa-porter-pilot-desk.service # the name of the service to restart
-  USER: live # the user to connect with `secrets.SERVER_SSH_KEY_CONTABO`
+  SERVICE: pwa-porter-pilot-cust.service # the name of the service to restart
+  USER: porter # the user to connect with `secrets.SERVER_SSH_KEY_CONTABO`
 
 jobs:
   build:
