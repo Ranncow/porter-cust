@@ -2,6 +2,12 @@
  * Plugin constants (hardcoded configuration) for frontend code.
  */
 export default class Porter_Cust_Front_Defaults {
+
+    ROUTE_ABOUT = '/about';
+    ROUTE_APP_UPGRADE = '/app/upgrade';
+    ROUTE_HOME = '/';
+    ROUTE_SETTINGS = '/settings';
+
     /** @type {Porter_Cust_Shared_Defaults} */
     SHARED;
 
