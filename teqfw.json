@@ -4,5 +4,10 @@
       "ns": "Porter_Cust",
       "path": "./src"
     }
+  },
+  "@teqfw/web-api": {
+    "services": [
+      "Porter_Cust_Back_Web_Api_Order_Create"
+    ]
   }
 }

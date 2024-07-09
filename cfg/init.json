@@ -28,5 +28,11 @@
       "useWebSocket": false
     },
     "urlBase": "domain.com"
+  },
+  "@ranncow/porter-base": {
+    "url": {
+      "cust": "https://cust.domain.com",
+      "desk": "https://desk.domain.com"
+    }
   }
 }
