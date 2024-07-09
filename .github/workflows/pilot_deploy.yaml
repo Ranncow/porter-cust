@@ -4,7 +4,7 @@ name: PILOT_CUST deploy
 on: workflow_dispatch
 
 env:
-  PATH_ROOT: /home/porter/inst/cust # the root path to place the ZIPs and apps
+  PATH_ROOT: /home/porter/inst/pilot/cust # the root path to place the ZIPs and apps
   PRJ: cust # the folder for the project root
   SERVICE: pwa-porter-pilot-cust.service # the name of the service to restart
   USER: porter # the user to connect with `secrets.SERVER_SSH_KEY_CONTABO`
