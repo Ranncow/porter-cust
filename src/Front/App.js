@@ -112,6 +112,11 @@ export default class Porter_Cust_Front_App {
                     component: () => container.get('Porter_Cust_Front_Ui_Route_Settings$'),
                     meta: {[META_ANON]: true},
                 });
+                router.addRoute({
+                    path: DEF.ROUTE_VISIT_REG_PIN,
+                    component: () => container.get('Porter_Cust_Front_Ui_Route_Visit_Reg_Pin$'),
+                    meta: {[META_ANON]: true},
+                });
                 //
                 // router.beforeEach((to) => {   });
                 //

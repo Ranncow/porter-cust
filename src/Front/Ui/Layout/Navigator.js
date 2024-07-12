@@ -68,6 +68,10 @@ export default function (
                         label: 'Home',
                         route: DEF.ROUTE_HOME,
                     }, {
+                        icon: 'pin',
+                        label: 'PIN',
+                        route: DEF.ROUTE_VISIT_REG_PIN,
+                    }, {
                         icon: 'settings',
                         label: 'Settings',
                         route: DEF.ROUTE_SETTINGS,

@@ -7,6 +7,7 @@ export default class Porter_Cust_Front_Defaults {
     ROUTE_APP_UPGRADE = '/app/upgrade';
     ROUTE_HOME = '/';
     ROUTE_SETTINGS = '/settings';
+    ROUTE_VISIT_REG_PIN = '/visit/reg/pin';
 
     /** @type {Porter_Cust_Shared_Defaults} */
     SHARED;

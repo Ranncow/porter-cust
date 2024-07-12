@@ -7,7 +7,9 @@
   },
   "@teqfw/web-api": {
     "services": [
-      "Porter_Cust_Back_Web_Api_Order_Create"
+      "Porter_Cust_Back_Web_Api_Order_Create",
+      "Porter_Cust_Back_Web_Api_Room_Permit_Read",
+      "Porter_Cust_Back_Web_Api_Room_Visit_Create"
     ]
   }
 }
