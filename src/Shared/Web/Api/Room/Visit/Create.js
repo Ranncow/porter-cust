@@ -32,6 +32,11 @@ class Response {
      */
     entity;
     /**
+     * The API key to authorize WebAPI requests to the back.
+     * @type {string}
+     */
+    sessionApiKey;
+    /**
      * @type {boolean}
      */
     success;
@@ -75,6 +80,7 @@ export default class Porter_Cust_Shared_Web_Api_Room_Visit_Create {
             const res = new Response();
             // cast known attributes
             res.entity = dtoEntity.createDto(data?.entity);
+            res.sessionApiKey = cast.string(data?.sessionApiKey);
             res.success = cast.boolean(data?.success);
             return res;
         };

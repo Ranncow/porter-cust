@@ -18,6 +18,7 @@ export default class Porter_Cust_Back_Web_Api_Room_Visit_Create {
      * @param {Porter_Base_Back_Act_Auth_Front_Read} actFrontRead
      * @param {Porter_Base_Back_Act_Room_Permit_Read} actPermitRead
      * @param {Porter_Base_Back_Act_Room_Visit_Read} actVisitRead
+     * @param {Porter_Base_Back_Mod_Auth_Session} modSession
      * @param {Porter_Cust_Back_Convert_Room_Visit} convertVisit
      */
     constructor(
@@ -32,6 +33,7 @@ export default class Porter_Cust_Back_Web_Api_Room_Visit_Create {
             Porter_Base_Back_Act_Auth_Front_Read$: actFrontRead,
             Porter_Base_Back_Act_Room_Permit_Read$: actPermitRead,
             Porter_Base_Back_Act_Room_Visit_Read$: actVisitRead,
+            Porter_Base_Back_Mod_Auth_Session$: modSession,
             Porter_Cust_Back_Convert_Room_Visit$: convertVisit,
         }
     ) {
@@ -66,6 +68,7 @@ export default class Porter_Cust_Back_Web_Api_Room_Visit_Create {
                         const {[A_FRONT.ID]: id} = await crud.create(trx, rdbFront, dto);
                         frontId = id;
                     }
+                    // register visit in RDB
                     const dto = rdbVisit.createDto();
                     dto.date_created = new Date();
                     dto.date_in = dbPermit.date_in;
@@ -77,6 +80,10 @@ export default class Porter_Cust_Back_Web_Api_Room_Visit_Create {
                     const {[A_VISIT.ID]: id} = await crud.create(trx, rdbVisit, dto);
                     const {dbVisit, dbRoom} = await actVisitRead.act({trx, id});
                     rs.entity = convertVisit.rdb2share({dbVisit, dbRoom});
+                    // establish a new session
+                    const {dbSession} = await modSession.establish({trx, httpRes: context.response, frontId});
+                    rs.sessionApiKey = dbSession.api_key;
+                    // mark result as succeed
                     rs.success = true;
                 }
                 await trx.commit();

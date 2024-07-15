@@ -28,6 +28,7 @@
     "@teqfw/di": "github:teqfw/di",
     "@teqfw/email": "github:teqfw/email",
     "@teqfw/i18n": "github:teqfw/i18n",
+    "@teqfw/test": "github:teqfw/test",
     "@teqfw/ui-quasar": "github:teqfw/ui-quasar",
     "@teqfw/vue": "github:teqfw/vue",
     "@teqfw/web": "github:teqfw/web",
